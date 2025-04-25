@@ -14,7 +14,8 @@ app.use(bodyParser.json());
 app.get('/pay', (req, res) => {
     const { order_id, amount } = req.query;
 
-    const paymentLink = `https://globalpaytech.com/hpp?order_id=${order_id}&amount=${amount}&return_url=https://globalpaytech-shopify.onrender.com/success`;
+    const paymentLink = `https://globalpaytech-hpp.onrender.com/success?order_id=${order_id}&status=success`;
+
 
     res.send(`
         <h1>Оплатите заказ №${order_id} на сумму $${amount}</h1>
